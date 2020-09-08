@@ -1,9 +1,3 @@
-import express from 'express';
+import app from './app';
 
-const app = express();
-
-app.get('/', (request, response) => {
-  response.json({ message: 'Hello World' });
-});
-
-app.listen(3333);
+app.listen(process.env.PORT || 3000);

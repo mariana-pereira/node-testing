@@ -1,5 +1,5 @@
 {
-  "name": "portfolio",
+  "name": "nodeauth",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
@@ -7,6 +7,7 @@
     "build": "babel src --extensions \".js,.ts\" --out-dir dist --copy-files --no-copy-ignored",
     "start": "node dist/server.js",
     "dev": "ts-node-dev -r tsconfig-paths/register --respawn --transpile-only --ignore-watch node_modules --no-notify src/server.ts",
+    "typeorm": "ts-node-dev ./node_modules/typeorm/cli.js",
     "test": "jest"
   },
   "devDependencies": {
@@ -28,6 +29,9 @@
     "typescript": "^3.9.6"
   },
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "pg": "^8.3.3",
+    "typeorm": "^0.2.25",
+    "uuidv4": "^6.2.3"
   }
 }
