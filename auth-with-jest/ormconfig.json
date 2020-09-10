@@ -7,7 +7,7 @@
   "password": "docker",
   "database": "nodeauth",
   "entities": [
-    "./src/models/*.ts"
+    "./src/app/models/*.ts"
   ],
   "migrations": [
     "./src/database/migrations/*.ts"
@@ -20,7 +20,7 @@
   "type": "sqlite",
   "database": "./__tests__/database.sqlite",
   "entities": [
-    "./src/models/*.ts"
+    "./src/app/models/*.ts"
   ],
   "migrations": [
     "./src/database/migrations/*.ts"

@@ -1,20 +1,9 @@
 import express from 'express';
-import { getRepository } from 'typeorm';
 
-import User from './models/User';
+import SessionController from './app/controllers/SessionController';
 
 const routes = express.Router();
 
-routes.get('/', async (req, res) => {
-  const usersRepository = getRepository(User);
-
-  const user = usersRepository.create({
-    name: 'Mariana',
-    email: 'mariana@gmail.com',
-    password_hash: 'smzkmzsnjsss56snkw'
-  });
-
-  await usersRepository.save(user);
-});
+routes.post('/sessions', SessionController.store);
 
 export default routes;
