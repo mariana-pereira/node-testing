@@ -1,4 +1,5 @@
-{
+[{
+  "name": "default",
   "type": "postgres",
   "host": "localhost",
   "port": 5432,
@@ -14,4 +15,17 @@
   "cli": {
     "migrationsDir": "./src/database/migrations"
   }
-}
+}, {
+  "name": "test",
+  "type": "sqlite",
+  "database": "./__tests__/database.sqlite",
+  "entities": [
+    "./src/models/*.ts"
+  ],
+  "migrations": [
+    "./src/database/migrations/*.ts"
+  ],
+  "cli": {
+    "migrationsDir": "./src/database/migrations"
+  }
+}]

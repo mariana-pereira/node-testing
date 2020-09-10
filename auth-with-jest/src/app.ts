@@ -1,7 +1,12 @@
+import * as dotenv from 'dotenv';
 import express from 'express';
 import routes from './routes';
 
 import './database';
+
+dotenv.config({
+  path: process.env.NODE_ENV === 'test' ? '.env.test' : 'env'
+});
 
 class AppController {
   public express: express.Application;
