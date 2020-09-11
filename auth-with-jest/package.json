@@ -8,9 +8,7 @@
     "start": "node dist/server.js",
     "dev": "ts-node-dev -r tsconfig-paths/register --respawn --transpile-only --ignore-watch node_modules --no-notify src/server.ts",
     "typeorm": "ts-node-dev ./node_modules/typeorm/cli.js",
-    "pretest": "ts-node-dev ./node_modules/typeorm/cli.js migration:run -c test",
-    "test": "jest",
-    "posttest": "ts-node-dev ./node_modules/typeorm/cli.js migration:revert -c test"
+    "test": "NODE_ENV=test jest"
   },
   "devDependencies": {
     "@babel/cli": "^7.10.4",
@@ -21,7 +19,9 @@
     "@types/bcryptjs": "^2.4.2",
     "@types/dotenv": "^8.2.0",
     "@types/express": "^4.17.7",
+    "@types/factory-girl": "^5.0.2",
     "@types/jest": "^26.0.4",
+    "@types/jsonwebtoken": "^8.5.0",
     "@types/supertest": "^2.0.10",
     "babel-plugin-module-resolver": "^4.0.0",
     "eslint": "^7.4.0",
@@ -39,6 +39,8 @@
     "bcryptjs": "^2.4.3",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "factory-girl": "^5.0.4",
+    "jsonwebtoken": "^8.5.1",
     "pg": "^8.3.3",
     "typeorm": "^0.2.25",
     "uuidv4": "^6.2.3"

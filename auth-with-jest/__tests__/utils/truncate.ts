@@ -1,13 +1,10 @@
-import {createConnection } from 'typeorm';
+const clearDb = async (connection) => {
+    const entities = connection.entityMetadatas;
 
-const truncate = async () => {
-  const connection = await createConnection('test');
-  const entities = connection.entityMetadatas;
-
-  for (const entity of entities) {
-    const repository = await connection.getRepository(entity.name);
-    await repository.query(`DELETE FROM ${entity.tableName};`);
-  }
+    entities.forEach(async (entity) => {
+      const repository = connection.getRepository(entity.name);
+      await repository.query(`DELETE FROM ${entity.tableName}`);
+    });
 };
 
-export default truncate;
+export default clearDb;
