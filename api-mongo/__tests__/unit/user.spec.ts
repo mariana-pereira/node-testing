@@ -30,7 +30,7 @@ describe('User', () => {
 
     const user = await User.create({
       name: 'Mariana',
-      email: 'mariana@gmail.com',
+      email: 'mari@gmail.com',
       password: '123456',
     });
 
